@@ -2,86 +2,77 @@
 <html>
 <head>
 <title>Xena AI</title>
-
 <style>
 body {
   background: #111;
   color: white;
   font-family: Arial;
   text-align: center;
-  padding: 50px;
+  padding: 40px;
 }
 
 .box {
   background: #222;
-  padding: 30px;
+  padding: 25px;
   border-radius: 15px;
   max-width: 500px;
   margin: auto;
 }
 
-#chat {
-  background: #333;
-  padding: 15px;
-  height: 200px;
-  overflow-y: auto;
-  border-radius: 10px;
-  text-align: left;
-  margin-bottom: 15px;
-}
-
 input {
+  width: 70%;
   padding: 10px;
-  width: 65%;
-  border-radius: 8px;
+  border-radius: 10px;
   border: none;
 }
 
 button {
-  background: #5865F2;
-  color: white;
+  padding: 10px;
+  border-radius: 10px;
   border: none;
-  padding: 10px 20px;
-  border-radius: 8px;
   cursor: pointer;
 }
-</style>
 
+#chat {
+  margin-top: 20px;
+}
+</style>
 </head>
 
 <body>
 
 <div class="box">
-
 <h1>🤖 Xena AI</h1>
 
 <div id="chat">
-<p>Xena: Salut! Cu ce te pot ajuta?</p>
+<p>Xena: Salut! Sunt Xena AI. Cu ce te pot ajuta?</p>
 </div>
 
-<input id="mesaj" placeholder="Scrie un mesaj...">
-
-<button onclick="trimite()">Trimite</button>
+<input id="msg" placeholder="Scrie un mesaj...">
+<button onclick="send()">Trimite</button>
 
 </div>
 
 <script>
-function trimite() {
+function send() {
+  let text = document.getElementById("msg").value;
+  let chat = document.getElementById("chat");
 
-let mesaj = document.getElementById("mesaj").value;
+  chat.innerHTML += "<p>Tu: " + text + "</p>";
 
-if (mesaj == "") {
-return;
-}
+  let raspuns = "Nu am înțeles încă, dar învăț.";
 
-document.getElementById("chat").innerHTML += 
-"<p>Tu: " + mesaj + "</p>";
+  if(text.toLowerCase().includes("salut")) {
+    raspuns = "Salut! Mă bucur să te văd.";
+  }
 
-document.getElementById("chat").innerHTML += 
-"<p>Xena: Am primit mesajul tău!</p>";
+  if(text.toLowerCase().includes("cine esti")) {
+    raspuns = "Sunt Xena AI.";
+  }
 
-document.getElementById("mesaj").value = "";
+  chat.innerHTML += "<p>Xena: " + raspuns + "</p>";
 
+  document.getElementById("msg").value = "";
 }
 </script>
 
