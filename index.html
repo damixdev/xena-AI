@@ -1,27 +1,38 @@
 <!DOCTYPE html>
-<html lang="ro">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Xena AI</title>
+<style>
+body {
+  background: #111;
+  color: white;
+  font-family: Arial;
+  text-align: center;
+  padding: 50px;
+}
+.box {
+  background: #222;
+  padding: 30px;
+  border-radius: 15px;
+  max-width: 500px;
+  margin: auto;
+}
+button {
+  background: #5865F2;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 10px;
+  font-size: 18px;
+}
+</style>
 </head>
 
-<body style="background:#111827;color:white;font-family:Arial;text-align:center;">
-
+<body>
+<div class="box">
 <h1>🤖 Xena AI</h1>
-
-<p>Bine ai venit pe Xena AI!</p>
-
-<input id="mesaj" placeholder="Scrie ceva...">
-<button onclick="raspunde()">Trimite</button>
-
-<p id="raspuns"></p>
-
-<script>
-function raspunde(){
-document.getElementById("raspuns").innerHTML="Salut! Sunt Xena AI și momentan sunt în versiunea de test.";
-}
-</script>
-
+<p>Salut! Sunt Xena, asistentul tău AI.</p>
+<button>Începe chat</button>
+</div>
 </body>
 </html>
