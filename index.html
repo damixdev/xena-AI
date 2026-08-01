@@ -4,37 +4,34 @@
 <title>Xena AI</title>
 <style>
 body {
-  background: #111;
-  color: white;
-  font-family: Arial;
-  text-align: center;
-  padding: 40px;
+  background:#111;
+  color:white;
+  font-family:Arial;
+  text-align:center;
+  padding:30px;
 }
-
 .box {
-  background: #222;
-  padding: 25px;
-  border-radius: 15px;
-  max-width: 500px;
-  margin: auto;
+  background:#222;
+  padding:20px;
+  border-radius:15px;
+  max-width:500px;
+  margin:auto;
 }
-
 input {
-  width: 70%;
-  padding: 10px;
-  border-radius: 10px;
-  border: none;
+  width:80%;
+  padding:10px;
+  border-radius:10px;
+  border:none;
 }
-
 button {
-  padding: 10px;
-  border-radius: 10px;
-  border: none;
-  cursor: pointer;
+  padding:10px 20px;
+  margin-top:10px;
+  border-radius:10px;
+  border:none;
+  cursor:pointer;
 }
-
 #chat {
-  margin-top: 20px;
+  margin:20px;
 }
 </style>
 </head>
@@ -42,48 +39,25 @@ button {
 <body>
 
 <div class="box">
-<h1>🤖 Xena AI</h1>
+<h1>Xena AI</h1>
 
 <div id="chat">
-<p>Xena: Salut! Sunt Xena AI. Cu ce te pot ajuta?</p>
+Salut! Sunt Xena AI 🤖
 </div>
 
 <input id="msg" placeholder="Scrie un mesaj...">
+<br>
 <button onclick="send()">Trimite</button>
 
 </div>
 
 <script>
-function send() {
-  let text = document.getElementById("msg").value;
-  let chat = document.getElementById("chat");
-
-  chat.innerHTML += "<p>Tu: " + text + "</p>";
-
-  let raspuns = "Nu am înțeles încă, dar învăț.";
-
-  if(text.toLowerCase().includes("salut")) {
-    raspuns = "Salut! Mă bucur să te văd.";
-  }
-
-  if(text.toLowerCase().includes("cine esti")) {
-    raspuns = "Sunt Xena AI.";
-  }
-
-  chat.innerHTML += "<p>Xena: " + raspuns + "</p>";
-
-  document.getElementById("msg").value = "";
+function send(){
+ let text=document.getElementById("msg").value;
+ document.getElementById("chat").innerHTML += "<p>Tu: "+text+"</p>";
+ document.getElementById("msg").value="";
 }
 </script>
-<input id="mesaj" placeholder="Scrie mesajul...">
-<button onclick="trimite()">Trimite</button>
 
-<script>
-document.getElementById("mesaj").addEventListener("keydown", function(event) {
-  if (event.key === "Enter") {
-    trimite();
-  }
-});
-</script>
 </body>
 </html>
