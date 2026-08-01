@@ -1,47 +1,19 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>Xena AI</title>
-<style>
-body {
-  background:#111;
-  color:white;
-  font-family:Arial;
-  text-align:center;
-  padding:40px;
-}
-#chat {
-  background:#222;
-  padding:20px;
-  border-radius:15px;
-  max-width:500px;
-  margin:auto;
-}
-input {
-  width:70%;
-  padding:10px;
-}
-button {
-  padding:10px;
-}
-</style>
-</head>
-
-<body>
+<body style="background:#111;color:white;text-align:center;font-family:Arial">
 
 <h1>Xena AI</h1>
 
-<div id="chat">
-<p id="mesaj">Salut! Sunt Xena AI.</p>
+<input id="msg" placeholder="Scrie aici..." style="padding:10px">
+<button onclick="chat()">Trimite</button>
 
-<input id="text" placeholder="Scrie ceva...">
-<button onclick="trimite()">Trimite</button>
-</div>
+<p id="raspuns"></p>
 
 <script>
-function trimite(){
- let t=document.getElementById("text").value;
- document.getElementById("mesaj").innerHTML="Ai spus: "+t;
+function chat(){
+ let mesaj = document.getElementById("msg").value;
+ document.getElementById("raspuns").innerHTML = 
+ "Xena: Am primit mesajul tău: " + mesaj;
 }
 </script>
 
