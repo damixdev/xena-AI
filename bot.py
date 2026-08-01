@@ -1,1 +1,1 @@
-
+print("Salut! Sunt XenaBot")
