@@ -1,19 +1,74 @@
 <!DOCTYPE html>
 <html>
-<body style="background:#111;color:white;text-align:center;font-family:Arial">
+<head>
+<title>Xena AI</title>
+<style>
+body {
+  background:#111;
+  color:white;
+  font-family:Arial;
+  text-align:center;
+  padding:30px;
+}
+.box {
+  background:#222;
+  padding:20px;
+  border-radius:15px;
+}
+input,button {
+  padding:10px;
+  margin:5px;
+}
+#admin {
+  display:none;
+}
+</style>
+</head>
 
-<h1>Xena AI</h1>
+<body>
 
-<input id="msg" placeholder="Scrie aici..." style="padding:10px">
-<button onclick="chat()">Trimite</button>
+<div class="box">
+<h1>🤖 Xena AI</h1>
+
+<input id="mesaj" placeholder="Scrie mesajul">
+<button onclick="trimite()">Trimite</button>
 
 <p id="raspuns"></p>
+</div>
+
+<hr>
+
+<button onclick="admin()">Admin Panel</button>
+
+<div id="admin" class="box">
+<h2>Administrator</h2>
+<p>Status: Online ✅</p>
+<p>Utilizatori: 1</p>
+<button onclick="inchide()">Închide</button>
+</div>
+
 
 <script>
-function chat(){
- let mesaj = document.getElementById("msg").value;
- document.getElementById("raspuns").innerHTML = 
- "Xena: Am primit mesajul tău: " + mesaj;
+function trimite(){
+let m=document.getElementById("mesaj").value;
+
+document.getElementById("raspuns").innerHTML =
+"Xena: Am primit: " + m;
+}
+
+function admin(){
+let parola=prompt("Parola admin:");
+
+if(parola=="xena123"){
+document.getElementById("admin").style.display="block";
+}
+else{
+alert("Parolă greșită");
+}
+}
+
+function inchide(){
+document.getElementById("admin").style.display="none";
 }
 </script>
 
