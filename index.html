@@ -2,6 +2,7 @@
 <html>
 <head>
 <title>Xena AI</title>
+
 <style>
 body {
   background: #111;
@@ -31,7 +32,7 @@ body {
 
 input {
   padding: 10px;
-  width: 70%;
+  width: 65%;
   border-radius: 8px;
   border: none;
 }
@@ -42,13 +43,16 @@ button {
   border: none;
   padding: 10px 20px;
   border-radius: 8px;
+  cursor: pointer;
 }
 </style>
+
 </head>
 
 <body>
 
 <div class="box">
+
 <h1>🤖 Xena AI</h1>
 
 <div id="chat">
@@ -56,23 +60,28 @@ button {
 </div>
 
 <input id="mesaj" placeholder="Scrie un mesaj...">
+
 <button onclick="trimite()">Trimite</button>
 
 </div>
 
 <script>
 function trimite() {
-  let mesaj = document.getElementById("mesaj").value;
 
-  if(mesaj == "") return;
+let mesaj = document.getElementById("mesaj").value;
 
-  document.getElementById("chat").innerHTML += 
-  "<p>Tu: " + mesaj + "</p>";
+if (mesaj == "") {
+return;
+}
 
-  document.getElementById("chat").innerHTML += 
-  "<p>Xena: Am primit mesajul tău!</p>";
+document.getElementById("chat").innerHTML += 
+"<p>Tu: " + mesaj + "</p>";
 
-  document.getElementById("mesaj").value = "";
+document.getElementById("chat").innerHTML += 
+"<p>Xena: Am primit mesajul tău!</p>";
+
+document.getElementById("mesaj").value = "";
+
 }
 </script>
 
